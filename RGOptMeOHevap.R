@@ -1,0 +1,8 @@
+plot(swathbest.c,cex=8,xlab="% Methanol in BGE",ylab="% Formic acid in BGE")
+title(main="Rough Global Optimization of BGE Composition based on 5 Factors")
+points(pwidthbest.c,cex=4)
+points(currentbest.c,cex=2)
+points(migzbest.c,cex=1)
+points(atimebest.c,cex=0.5)
+lines(meoh.evap[-31,2]*100/rowSums(meoh.evap[-31,])~meoh.evap[-31,1],lwd=2)
+arrows(1,2.816901,0,2.857143,lwd=2)
