@@ -3,7 +3,7 @@ formula<-paste0("C",nagenresult[,"C"],"H",nagenresult[,"H"],"N",nagenresult[,"N"
 nagenLoss<-t(apply(nagenresult,1,function(x) x-loss))
 underivFormulaChain<-paste0("C",nagenLoss[,"C"],"H",nagenLoss[,"H"],"N",nagenLoss[,"N"],"O",nagenLoss[,"O"],"  Z=",nagenLoss[,"Z-number"])
 Rchain<-paste0("C",nagenLoss[,"C"],"H",nagenLoss[,"H"],"  Z=",nagenLoss[,"Z-number"])
-matrix(c(formula,underivFormulaChain,Rchain),ncol=3)
+matrix(c(formula,underivFormulaChain,Rchain,derivstr),ncol=4)
 }
 #References for calculating the NA hydrocarbon chain formulae
 #Loss of EDC and amide C(=O) c(0,-4,9,19,2,3,0,0,0)
