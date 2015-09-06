@@ -1,8 +1,8 @@
-pairsRanges<-function(matrix,mzcol,retrow,thresh){
+pairsRanges<-function(matrix,matrix.window,mzcol,retrow,thresh){
 #pairs is the migration time-m/z pairs two-column matrix. The vector supairs is the sorted unique m/z values which registered
 #in pairs. The empty pairsranges is opened for the for loop.
 #The matrix is the data matrix itself. The m/z vector must be the second column and migration time must be the first row.
-  pairs<-cbind(matrix[which(matrix>thresh,arr.in=T)[,1],mzcol],matrix[retrow,which(matrix>thresh,arr.in=T)[,2]])
+  pairs<-cbind(matrix[which(matrix.window>thresh,arr.in=T)[,1],mzcol],matrix[retrow,which(matrix.window>thresh,arr.in=T)[,2]])
   supairs<-sort(unique(pairs[,1]))
   pairsranges<-c(0,0,0)
 #pairsranges is the vector of migration (retention) time values for a given unique m/z derived from supairs (or pairs).
