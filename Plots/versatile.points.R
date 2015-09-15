@@ -13,3 +13,6 @@ versatile.points<-function(data,data.window,thresh,ret,cex,xlim=NULL,ylim=NULL,x
   )
 }
 #eoc
+thepoints<-function(data,data.window,thresh,ret,cex,xlim=NULL,ylim=NULL,xlab="",ylab="",colour){
+  pointcoords<-cbind(data[which(data.window>thresh,arr.in=T)[,1]],ret[which(data.window>thresh,arr.in=T)[,2]])
+}
