@@ -1,9 +1,9 @@
 #soc
-versatile.points<-function(data,data.window,thresh,ret,cex,xlim=NULL,ylim=NULL,xlab,ylab,colour){
-  ifelse(colour=="topo",
+versatile.points<-function(data,data.window,thresh,ret,cex,xlim=NULL,ylim=NULL,xlab="",ylab="",colour){
+  ifelse(colour=="ramp",
     points(data[which(data.window>thresh,arr.in=T)[,1]]~ret[which(data.window>thresh,arr.in=T)[,2]],
     cex=cex,xlab=xlab,ylab=ylab,
-    col=topo.colors(length(data[which(data.window>thresh,arr.in=T)]))[rank(data[which(data.window>thresh,arr.in=T)])],
+    col=rampPalette(length(data[which(data.window>thresh,arr.in=T)]))[rank(data[which(data.window>thresh,arr.in=T)])],
     xlim=xlim, ylim=ylim),
     points(data[which(data.window>thresh,arr.in=T)[,1]]~ret[which(data.window>thresh,arr.in=T)[,2]],
     cex=cex,xlab=xlab,ylab=ylab,
